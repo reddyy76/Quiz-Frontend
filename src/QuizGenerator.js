@@ -17,7 +17,7 @@ const QuizGenerator = () => {
   const fetchQuestions = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:9090/api/questions/getAllQuestion"
+        "http://localhost:8080/api/questions/getAllQuestion"
       );
       setQuestions(response.data);
 
@@ -56,7 +56,7 @@ const QuizGenerator = () => {
     console.log("Req", quizData);
 
     axios
-      .post("http://localhost:9090/api/quizzes", quizData)
+      .post("http://localhost:8080/api/quizzes", quizData)
       .then((response) => {
         console.log("Quiz generated successfully:", response.data);
       })

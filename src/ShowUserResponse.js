@@ -13,7 +13,7 @@ export const ShowUserResponse = () => {
   const fetchUserResponses = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:9090/api/user-answers"
+        "http://localhost:8080/api/user-answers"
       );
       setResponses(response.data);
     } catch (error) {

@@ -31,7 +31,7 @@ const AdminLogin = () => {
 
     try {
       await axios.post(
-        "http://localhost:9090/api/questions/addquestion",
+        "http://localhost:8080/api/questions/addquestion",
         newQuestion
       );
       // Handle success, e.g., display a success message or update the question list

@@ -32,7 +32,7 @@ const QuizPage = () => {
 
   const fetchQuizList = async () => {
     try {
-      const response = await axios.get("http://localhost:9090/api/quizzes");
+      const response = await axios.get("http://localhost:8080/api/quizzes");
       setQuizList(response.data);
     } catch (error) {
       setError("Failed to fetch quiz list");
@@ -42,7 +42,7 @@ const QuizPage = () => {
   const fetchQuizQuest = async (quizId) => {
     try {
       const response = await axios.get(
-        `http://localhost:9090/api/quizzes/getQuizQuestById/${quizId}`
+        `http://localhost:8080/api/quizzes/getQuizQuestById/${quizId}`
       );
       setQuizQuest(response.data);
       setSelectedOptions([]);
@@ -99,7 +99,7 @@ const QuizPage = () => {
         console.log(userAnswers);
 
         const response = await axios.post(
-          "http://localhost:9090/api/user-answers",
+          "http://localhost:8080/api/user-answers",
           userAnswers
         );
 

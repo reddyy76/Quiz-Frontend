@@ -16,7 +16,7 @@ export const ShowQuestions = () => {
   const fetchQuestions = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:9090/api/questions/getAllQuestion"
+        "http://localhost:8080/api/questions/getAllQuestion"
       );
       setQuestions(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ export const ShowQuestions = () => {
 
   const handleDeleteQuestion = async (id) => {
     try {
-      await axios.delete(`http://localhost:9090/api/questions/${id}`);
+      await axios.delete(`http://localhost:8080/api/questions/${id}`);
       fetchQuestions(); // Refresh the question list
     } catch (error) {
       setError("Failed to delete question");
@@ -41,7 +41,7 @@ export const ShowQuestions = () => {
   const handleUpdateQuestion = async (updatedQuestion) => {
     try {
       await axios.put(
-        `http://localhost:9090/api/questions/${updatedQuestion.id}`,
+        `http://localhost:8080/api/questions/${updatedQuestion.id}`,
         updatedQuestion
       );
       fetchQuestions(); // Refresh the question list
